@@ -1,11 +1,8 @@
 
 
-getQuestion
-===========
+# getQuestion
 
-
-Install
--------
+## Install
 
 Use `composer`
 
@@ -16,8 +13,7 @@ $ composer install
 ```
 
 
-Usage
------
+## Usage
 
 Count number of questions about *pompe* topic:
 
@@ -31,8 +27,7 @@ result:
 count for 'pompe' = 300
 ```
 
-Unit tests
-----------
+## Unit tests
 
 To run unit tests:
 
@@ -40,9 +35,9 @@ To run unit tests:
 $ ./vendor/bin/phpunit QuestionTest.php
 ```
 
-TODO
-----
-###PHP
+## TODO
+
+### PHP
 
 Your mission : implement the 'list' feature (see below).
 
@@ -71,7 +66,7 @@ Titles for 'pompe' (30/300):
 - ...
 ```
 
-###VueJS
+### VueJS
 
 Implemnt the same behavior using a VueJS component.  
 
