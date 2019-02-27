@@ -18,16 +18,19 @@ class Question
             return -1;
 
 // setup the Guzzle CLient object
-		$client = new Client('https://www.fluksaqua.com');
+	
+                
+$client = new Client();
+$request = $client->get("https://www.fluksaqua.com/fr/forum/{$text}");
+ 
 
-		// define the url
-		$request = $client->get("fr/forum/{$text}");
-
-		// send the request
-		$respnose = $request->send();
+		 //send the request
+		$response = $request->send();
 
 		// get the body of the response
-		$content = $respnose->getBody();
+		$content = \GuzzleHttp\json_encode($response->getBody());
+                
+               // var_dump($content);exit; 
 
 		// search the pattern
 		$res = preg_match('/([0-9]+) Questions sur ([0-9]+)/', $content,$matches);
@@ -38,4 +41,6 @@ class Question
 		$total = isset($matches[2]) ? $matches[2] : 0;
 		return $total;
 	}
+        
+       
 }
